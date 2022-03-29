@@ -86,7 +86,7 @@ public class ExportRoutine : MonoBehaviour
         SetCameraPositionBasedOnObjectToCapture(Camera.main, m_instanceObject);
         for (int i = 0; i < steps; i++)
         {
-            
+            yield return new WaitForEndOfFrame();
             center.eulerAngles = new Vector3(0, currentY, 0);
             yield return new WaitForEndOfFrame();
             //Create RT and load into Camera
@@ -142,7 +142,7 @@ public class ExportRoutine : MonoBehaviour
         //sets size of camera + 10% padding
         cam.orthographicSize = GetHighestSideValue() / 2f * 1.1f;
 
-        Debug.Break();
+      
 
 
         Renderer GetBiggestRenderer()
